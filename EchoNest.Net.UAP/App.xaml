@@ -19,6 +19,7 @@
             <locator:ViewModels x:Name="Locator" />
             <SolidColorBrush x:Key="AwfulBlue" Color="#FF1E72C9"/>
             <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+            <converters:ShowImageConverter x:Key="ShowImageConverter" />
             <converters:ShowBackButtonConverter x:Key="ShowBackButtonConverter" />
         </ResourceDictionary>
     </Application.Resources>

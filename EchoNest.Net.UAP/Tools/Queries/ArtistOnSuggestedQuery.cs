@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using EchoNest.Net.Core.Managers;
+using EchoNest.Net.Core.Options;
 using EchoNest.Net.UAP.Common;
+using EchoNest.Net.UAP.ScrollingCollection.Artists;
 
 namespace EchoNest.Net.UAP.Tools.Queries
 {
@@ -52,6 +54,14 @@ namespace EchoNest.Net.UAP.Tools.Queries
             {
                 return;
             }
+
+            string queryText = args.QueryText;
+            var search = new ArtistSearch()
+            {
+                Name = queryText
+            };
+            var bucketParameter = new[] {"images"};
+            Locator.ViewModels.ArtistListPageVm.ArtistListScrollingCollection = new ArtistListScrollingCollection(bucketParameter, search);
         }
     }
 

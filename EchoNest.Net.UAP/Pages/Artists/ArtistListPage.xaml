@@ -63,10 +63,14 @@
             </Grid.ColumnDefinitions>
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <SearchBox PlaceholderText="Enter Artists Name" Margin="15">
+                <ProgressBar IsIndeterminate="True" 
+                             Visibility="{Binding ArtistListScrollingCollection.IsLoading, 
+                    Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                <SearchBox Grid.Row="1" PlaceholderText="Enter Artists Name" Margin="15">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="SuggestionsRequested">
                             <core:InvokeCommandAction Command="{Binding ArtistOnSuggestedQuery}" />
@@ -79,6 +83,18 @@
                         </core:EventTriggerBehavior>
                     </interactivity:Interaction.Behaviors>
                 </SearchBox>
+                <ListView Grid.Row="2" ItemsSource="{Binding ArtistListScrollingCollection}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Height="200" VerticalAlignment="Bottom" Stretch="UniformToFill" Source="{Binding Images, Converter={StaticResource ShowImageConverter}}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
             </Grid>
             <Grid Grid.Column="1" Grid.RowSpan="2" x:Name="DetailContentPresenter">
                 

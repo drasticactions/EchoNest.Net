@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EchoNest.Net.Core.Managers;
 using EchoNest.Net.UAP.Common;
+using EchoNest.Net.UAP.ScrollingCollection.Artists;
 using EchoNest.Net.UAP.Tools.Queries;
 
 namespace EchoNest.Net.UAP.ViewModels
@@ -19,5 +20,17 @@ namespace EchoNest.Net.UAP.ViewModels
         public ArtistOnSubmittedQuery ArtistOnSubmittedQuery { get; set; } = new ArtistOnSubmittedQuery();
 
         public ArtistOnItemClick ArtistOnItemClick { get; set; } = new ArtistOnItemClick();
+
+        private ArtistListScrollingCollection _artistListScrollingCollection;
+
+        public ArtistListScrollingCollection ArtistListScrollingCollection
+        {
+            get { return _artistListScrollingCollection; }
+            set
+            {
+                SetProperty(ref _artistListScrollingCollection, value);
+                OnPropertyChanged();
+            }
+        }
     }
 }
