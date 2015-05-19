@@ -144,8 +144,80 @@ namespace EchoNest.Net.Core.Common
 
         public const string TrackPropertiesViaUrl =
             BaseUrl + "track/upload?api_key={0}&url={1}&format=json";
+
         public const string TrackPropertiesViaFile =
             BaseUrl + "track/upload?api_key={0}&filetype={1}&format=json";
+
+        #endregion
+
+        #region Playlists
+
+        public const string BasicPlaylist =
+            BaseUrl + "playlist/basic?api_key={0}&results={1}&format=json";
+
+        public const string StaticPlaylist =
+            BaseUrl + "playlist/static?api_key={0}&results={1}&format=json";
+
+        public const string DynamicPlaylistCreate =
+            BaseUrl + "playlist/dynamic/create?api_key={0}";
+
+        public const string DynamicPlaylistNext =
+            BaseUrl + "playlist/dynamic/next?api_key={0}";
+
+        public const string DynamicPlaylistFeedback =
+            BaseUrl + "playlist/dynamic/feedback?api_key={0}";
+
+        public const string DynamicPlaylistInfo =
+            BaseUrl + "playlist/dynamic/info?api_key={0}";
+
+        public const string DynamicPlaylistDelete =
+            BaseUrl + "playlist/dynamic/delete?api_key={0}";
+
+        public const string DynamicPlaylistSteer =
+            BaseUrl + "playlist/dynamic/steer?api_key={0}";
+
+        #endregion
+
+        #region Taste
+
+        public const string TasteCreate =
+           BaseUrl + "tasteprofile/create?api_key={0}&type={1}&name={2}";
+
+        public const string TasteUpdate =
+            BaseUrl + "tasteprofile/update?api_key={0}&id={1}";
+
+        public const string TasteKeyValues =
+            BaseUrl + "tasteprofile/keyvalues?api_key={0}&format=json&id={1}";
+
+        public const string TastePlay =
+            BaseUrl + "tasteprofile/play?api_key={0}&format=json";
+
+        public const string TasteSkip =
+            BaseUrl + "tasteprofile/skip?api_key={0}&format=json&id={1}";
+
+        public const string TasteFavorite =
+            BaseUrl + "tasteprofile/favorite?api_key={0}&format=json&id={1}";
+
+        public const string TasteBan =
+            BaseUrl + "tasteprofile/ban?api_key={0}&format=json&id={1}";
+
+        public const string TasteRate =
+            BaseUrl + "tasteprofile/rate?api_key={0}&format=json&id={1}";
+
+        public const string TasteProfile =
+            BaseUrl + "tasteprofile/profile?api_key={0}&format=json";
+
+        public const string TasteRead =
+            BaseUrl + "tasteprofile/read?api_key={0}&format=json&id={1}&results={2}&start={3}";
+
+        public const string TasteFeed =
+            BaseUrl + "tasteprofile/feed?api_key={0}&format=json&id={1}&results={2}&start={3}";
+
+        public const string TasteDelete =
+            BaseUrl + "tasteprofile/delete?api_key={0}&id={1}";
+
+        public const string TasteList =
+            BaseUrl + "tasteprofile/list?api_key={0}&results={1}&start={2}";
 
         #endregion
     }
